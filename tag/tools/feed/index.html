@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>tools &#8211; Unidash</title>
+	<atom:link href="http://OFFLINEZIP.wpshotag/tools/feed/" rel="self" type="application/rss+xml" />
+	<link>https://OFFLINEZIP.wpsho</link>
+	<description>brought to you by Foodies Inc.</description>
+	<lastBuildDate>Sun, 28 Jun 2020 20:29:14 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.4.2</generator>
+
+<image>
+	<url>http://OFFLINEZIP.wpshowp-content/uploads/2020/06/cropped-logo_ud_glyph-1-32x32.png</url>
+	<title>tools &#8211; Unidash</title>
+	<link>https://OFFLINEZIP.wpsho</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">167596888</site>	<item>
+		<title>Metrics</title>
+		<link>http://OFFLINEZIP.wpsho2020/06/06/metrics/</link>
+					<comments>http://OFFLINEZIP.wpsho2020/06/06/metrics/#comments</comments>
+		
+		<dc:creator><![CDATA[RawBean]]></dc:creator>
+		<pubDate>Sat, 06 Jun 2020 09:17:05 +0000</pubDate>
+				<category><![CDATA[Semester 4]]></category>
+		<category><![CDATA[Unidash]]></category>
+		<category><![CDATA[automation]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[tools]]></category>
+		<guid isPermaLink="false">http://OFFLINEZIP.wpsho?p=683</guid>
+
+					<description><![CDATA[Hello guys, Metrics can not only be found in software development but also in everyday situations like news or in your car. But as well as you should not just simply believe printed or shown details you should interpret them correctly. In your car for example the shown data when you hit 100 km/h is [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>Hello guys,</p>
+
+
+
+<p>Metrics can not only be found in software development but also in everyday situations like news or in your car. But as well as you should not just simply believe printed or shown details you should interpret them correctly. In your car for example the shown data when you hit 100 km/h is not very important until you find yourself in a speed limit of 30 km/h.&nbsp;</p>
+
+
+
+<p>And you should be sure that the given information is correct itself. So, it’s very hard to find a tool that brings you comfort in handling and setting up, provides you with all necessary information and creating the benefit you need for your software, maybe a warning when “you are too fast or too slow”.</p>
+
+
+
+<p>In this week’s blog post (to be fair, it’s a two-week-post) we talk about clean and safe code and how you can automatically check the quality of your code. We will speak about tools we already use, tools that we want to use and tools that do not meet our requirements. If you have any detailed questions about the software as outlined here, just let us know below.</p>
+
+
+
+<h2>Initial Situation</h2>
+
+
+
+<p>As we are using Azure DevOps for planning and managing our project, many metrics are already implemented and working before we already thought about using some additional software. But nevertheless, we wanted (at least) to check out some other metric tools to maybe improve our code much more.&nbsp;</p>
+
+
+
+<p>So, we checked the internet for some ideas and suggestions what kind of software there is and what we want for <em>Unidash</em>.&nbsp;</p>
+
+
+
+<h2>Additional Metrics</h2>
+
+
+
+<p>We found many different sites with lists of tools that may improve code or deployment and also monitor the system while running.&nbsp;</p>
+
+
+
+<p>We’ve seen that there are three categories (for us) that we could split up into different tools:</p>
+
+
+
+<ol><li>Team efficiency/Project planning</li><li>Business agility/Deployment</li><li>Security/Quality Assurance</li></ol>
+
+
+
+<p>As we use Azure DevOps, we already implemented nearly every tool that applies to ‘Project Planning’ and ‘Business Agility’. What makes life pretty easy when you choose a powerful tool to host your project (thanks Gino).</p>
+
+
+
+<p>So, we concentrated on Security and Quality Assurance. We found different tools for it, which we wanted to check out.</p>
+
+
+
+<h3>Candidate No. 1: SonarQube</h3>
+
+
+
+<p>SonarQube checks your code for weaknesses and smelly parts so you can easily find and fix them if you want to.&nbsp;</p>
+
+
+
+<p>SonarQube would be a perfect addition to what we already have. We are checking how and where we want to install it as our server and some of our work devices may not have enough power to keep everything smooth, but we are looking into it. We want to centralize it so everyone can use the benefits without having troubles while installing or monitoring it on their local devices.</p>
+
+
+
+<div class="wp-block-group has-subtle-background-background-color has-background"><div class="wp-block-group__inner-container">
+<h6>Addendum by gino</h6>
+
+
+
+<p>We integrated SonarCloud into our CI/CD pipeline. You can check out the SC project <a rel="noreferrer noopener" href="https://sonarcloud.io/dashboard?id=unidash-backend" target="_blank">over here</a>.</p>
+
+
+
+<p>In order to run this, all we needed to do is to integrate the tasks into our pipeline definition. Check the relevant <a rel="noreferrer noopener" href="https://dev.azure.com/foodies-inc/_git/Unidash?path=%2Fazure-pipelines.yml&amp;version=GBdev&amp;line=79&amp;lineEnd=80&amp;lineStartColumn=1&amp;lineEndColumn=1&amp;lineStyle=plain" target="_blank">code section here</a>.</p>
+</div></div>
+
+
+
+<hr class="wp-block-separator is-style-dots"/>
+
+
+
+<p>Another perfect supplement would be “Vault” which stores user secrets and app configurations in an encrypted environment. As we use many APIs for <em>Unidash </em>we may want to check this one out.</p>
+
+
+
+<div class="wp-block-group has-subtle-background-background-color has-background"><div class="wp-block-group__inner-container">
+<h6>Addendum by Gino</h6>
+
+
+
+<p>There is a variety of alternative tools when it comes to secret management. As for most stuff, some tools fit to a specific use-case, some not. Hashicorp&#8217;s Vault is a great versatile tool, however, we&#8217;ve opted into <a href="https://azure.microsoft.com/en-us/services/key-vault/" target="_blank" rel="noreferrer noopener">Azure Key Vault</a> for all microservices as an <em>optional </em>configuration layer. </p>
+
+
+
+<p>Azure Key Vault has first-party support for ASP.NET Core and is easy to configure.</p>
+</div></div>
+
+
+
+<hr class="wp-block-separator is-style-dots"/>
+
+
+
+<p>Last but not least, we are looking into “Clair” which analyzes Docker Containers for vulnerabilities. It’s another very handy tool if it is set up correctly.&nbsp;</p>
+
+
+
+<hr class="wp-block-separator is-style-dots"/>
+
+
+
+<div class="wp-block-group has-subtle-background-background-color has-background"><div class="wp-block-group__inner-container">
+<h6>Addendum by Gino</h6>
+
+
+
+<p>After we published this blog post, we&#8217;ve also integrated <a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview" target="_blank">Azure Application Insights</a> as an optional feature into the back-end projects. Application Insights delivers a handful of useful metrics, such as response times, error codes, external dependencies, etc.</p>
+
+
+
+<p>It&#8217;s a versatile tool and we are happy with it. Integrating it into our backend is easy as 123: <code>services.AddApplicationInsightsTelemetry(Configuration["APPINSIGHTS_INSTRUMENTATIONKEY"]);</code></p>
+</div></div>
+
+
+
+<p>We won’t use Jenkins, which was brought up by @profberk as we already have a perfectly working CI at Azure DevOps.</p>
+
+
+
+<p>So far, thanks for reading.</p>
+
+
+
+<p>If you have any questions or comments, just let us know below, every comment is highly appreciated.</p>
+
+
+
+<p>Cheers and stay healthy,<br>-RawBean-</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://OFFLINEZIP.wpsho2020/06/06/metrics/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">683</post-id>	</item>
+	</channel>
+</rss>

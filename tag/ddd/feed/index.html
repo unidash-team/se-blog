@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>ddd &#8211; Unidash</title>
+	<atom:link href="http://OFFLINEZIP.wpshotag/ddd/feed/" rel="self" type="application/rss+xml" />
+	<link>https://OFFLINEZIP.wpsho</link>
+	<description>brought to you by Foodies Inc.</description>
+	<lastBuildDate>Mon, 11 May 2020 16:32:26 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.4.2</generator>
+
+<image>
+	<url>http://OFFLINEZIP.wpshowp-content/uploads/2020/06/cropped-logo_ud_glyph-1-32x32.png</url>
+	<title>ddd &#8211; Unidash</title>
+	<link>https://OFFLINEZIP.wpsho</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">167596888</site>	<item>
+		<title>Foody&#8217;s Architecture</title>
+		<link>http://OFFLINEZIP.wpsho2019/12/01/foodys-architecture/</link>
+					<comments>http://OFFLINEZIP.wpsho2019/12/01/foodys-architecture/#comments</comments>
+		
+		<dc:creator><![CDATA[ginomessmer]]></dc:creator>
+		<pubDate>Sun, 01 Dec 2019 20:03:18 +0000</pubDate>
+				<category><![CDATA[Semester 3]]></category>
+		<category><![CDATA[Unidash]]></category>
+		<category><![CDATA[architecture]]></category>
+		<category><![CDATA[asp.net]]></category>
+		<category><![CDATA[backend]]></category>
+		<category><![CDATA[cqrs]]></category>
+		<category><![CDATA[ddd]]></category>
+		<category><![CDATA[dotnet]]></category>
+		<category><![CDATA[frontend]]></category>
+		<category><![CDATA[mvvm]]></category>
+		<category><![CDATA[testing]]></category>
+		<guid isPermaLink="false">https://blog.foodies.ginomessmer.me/?p=378</guid>
+
+					<description><![CDATA[Until the last sprint, we set the rails for our microservices&#8217; architecture. For all the ASP.NET Core backends we make use of Domain Driven Development. Without going too much into details, here is a basic gist of our architecture: Domain models are persisted and may consist of a root aggregate, value objects (immutable child of [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>Until the last sprint, we set the rails for our microservices&#8217; architecture. For all the ASP.NET Core backends we make use of Domain Driven Development. Without going too much into details, here is a basic gist of our architecture:</p>
+
+
+
+<ul><li>Domain models are persisted and may consist of a root aggregate, value objects (immutable child of root aggregates) and a repository interface. Actual repository implementations are added by Dependency Injection.</li><li><a href="https://martinfowler.com/bliki/CQRS.html">CQRS</a> &#8211; Command Query Responsibility Segregation. Commands fire away data, queries retrieve data. Neither one can do both at the same time. It makes use of the Mediator Pattern.</li><li>Mapping. We use AutoMapper to map from Data Transfer Objects to Commands over to Domain Models, and vice-versa.</li></ul>
+
+
+
+<h2>Something along the lines MVC</h2>
+
+
+
+<p>Our setup is an abstraction of MVC. We have Models (our domain models), we have Views (JSON) and we have Controllers. Our controller has a lot more stuff behind it. This code map should serve as an overview:</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img data-attachment-id="365" data-permalink="http://OFFLINEZIP.wpshomvc_auth/" data-orig-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/MVC_Auth-scaled.png" data-orig-size="2560,1113" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="MVC_Auth" data-image-description="" data-medium-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/MVC_Auth-300x130.png" data-large-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/MVC_Auth-1024x445.png" src="https://blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/MVC_Auth-scaled.png" alt="" class="wp-image-365" srcset="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/MVC_Auth-scaled.png 2560w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/MVC_Auth-300x130.png 300w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/MVC_Auth-1024x445.png 1024w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/MVC_Auth-768x334.png 768w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/MVC_Auth-1536x668.png 1536w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/MVC_Auth-2048x890.png 2048w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/MVC_Auth-1200x522.png 1200w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/MVC_Auth-1980x860.png 1980w" sizes="(max-width: 2560px) 100vw, 2560px" /><figcaption>A quick overview of the MVC architecture behind the backends</figcaption></figure>
+
+
+
+<h4>A quick TL;DR:</h4>
+
+
+
+<p>ASP.NET Core controllers may contain multiple routes (such as <code>/auth/connect/</code> and <code>/auth/finalize/</code>). These routes fire a command through a mediator that fetches the associated handler. A command is a POCO (Plain Old C# Class) with read-only properties only.</p>
+
+
+
+<p>The mediator looks for the associated command handler that matches the command and executes it. After execution, it returns the result back to the controller and from there back to the view as JSON.</p>
+
+
+
+<p>If you&#8217;re a nerd like us and you&#8217;re curious, take a look at one of the <a href="https://dev.azure.com/foodies-inc/_git/foody?path=%2FFoodies.Foody.Auth.Application%2FControllers%2FAuthenticationController.cs&amp;version=GBdev&amp;line=41&amp;lineEnd=42&amp;lineStartColumn=1&amp;lineEndColumn=1&amp;lineStyle=plain">controllers</a>, <a href="https://dev.azure.com/foodies-inc/_git/foody?path=%2FFoodies.Foody.Auth%2FUsers%2FCommands%2FCreateUserCommand.cs&amp;_a=content">commands</a>, <a href="https://dev.azure.com/foodies-inc/_git/foody?path=%2FFoodies.Foody.Auth%2FUsers%2FCommands%2FCreateUserCommandHandler.cs&amp;_a=content">command handlers</a> and  <a href="https://dev.azure.com/foodies-inc/_git/foody?path=%2FFoodies.Foody.Auth%2FUsers%2FRequests%2FRegisterUserRequestHandler.cs&amp;version=GBdev&amp;_a=content">requests handlers</a> (requests consolidate commands and queries for the controller methods).</p>
+
+
+
+<h4>Tell me why?</h4>
+
+
+
+<p>This setup makes it fairly easy to separate concerns and maintain business logic without destroying other parts of our code. It also helps to reduce redundancy and improves portability.</p>
+
+
+
+<h2 id="tdd">Test Driven Development for Backend</h2>
+
+
+
+<p>I really wanted to try out TDD for the backend projects. Since we would like to include automated tests where applicable, it made sense to create tests for business-oriented classes and test them right away.</p>
+
+
+
+<p>.NET Core offers several test environments. One of the popular ones is xUnit. Without going too <em>deep</em> &#8211; if you want to read more about TDD, I recommend you to check out <a href="https://dev.to/adegokesimi/build-a-tdd-restful-webapi-for-a-blog-using-dotnet-core-5fo8">this article</a> for more details. The great part of automated testing is that we can easily integrate it with Azure DevOps <a href="https://dev.azure.com/foodies-inc/foody/_build/results?buildId=32&amp;view=ms.vss-test-web.build-test-results-tab">as part of our CI pipeline</a>:</p>
+
+
+
+<div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2019\/12\/01\/foodys-architecture\/"}' class="wp-block-jetpack-tiled-gallery alignwide is-style-rectangular"><div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2019\/12\/01\/foodys-architecture\/"}' class="tiled-gallery__gallery"><div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2019\/12\/01\/foodys-architecture\/"}' class="tiled-gallery__row"><div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2019\/12\/01\/foodys-architecture\/"}' class="tiled-gallery__col"><figure class="tiled-gallery__item"><img data-attachment-id="382" data-permalink="http://OFFLINEZIP.wpsho2019/12/01/foodys-architecture/unittests/" data-orig-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/UnitTests.jpg" data-orig-size="2234,1376" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="UnitTests" data-image-description="" data-medium-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/UnitTests-300x185.jpg" data-large-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/UnitTests-1024x631.jpg" data-attachment-id="382" data-permalink="http://OFFLINEZIP.wpsho2019/12/01/foodys-architecture/unittests/" data-orig-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/UnitTests.jpg" data-orig-size="2234,1376" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="UnitTests" data-image-description="" data-medium-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/UnitTests-300x185.jpg" data-large-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/UnitTests-1024x631.jpg" srcset="https://i0.wp.com/blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/UnitTests.jpg?strip=info&#038;w=600&#038;ssl=1 600w,https://i0.wp.com/blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/UnitTests.jpg?strip=info&#038;w=900&#038;ssl=1 900w,https://i0.wp.com/blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/UnitTests.jpg?strip=info&#038;w=1200&#038;ssl=1 1200w,https://i0.wp.com/blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/UnitTests.jpg?strip=info&#038;w=1376&#038;ssl=1 1376w" alt="" data-height="1376" data-id="382" data-link="https://blog.foodies.ginomessmer.me/?attachment_id=382" data-url="https://blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/UnitTests.jpg" data-width="2234" src="https://i0.wp.com/blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/UnitTests.jpg?ssl=1"/></figure></div><div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2019\/12\/01\/foodys-architecture\/"}' class="tiled-gallery__col"><figure class="tiled-gallery__item"><img data-attachment-id="384" data-permalink="http://OFFLINEZIP.wpsho2019/12/01/foodys-architecture/vs_tests/" data-orig-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/vs_tests.jpg" data-orig-size="2442,1338" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="vs_tests" data-image-description="" data-medium-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/vs_tests-300x164.jpg" data-large-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/vs_tests-1024x561.jpg" data-attachment-id="384" data-permalink="http://OFFLINEZIP.wpsho2019/12/01/foodys-architecture/vs_tests/" data-orig-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/vs_tests.jpg" data-orig-size="2442,1338" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="vs_tests" data-image-description="" data-medium-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/vs_tests-300x164.jpg" data-large-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/vs_tests-1024x561.jpg" srcset="https://i2.wp.com/blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/vs_tests.jpg?strip=info&#038;w=600&#038;ssl=1 600w,https://i2.wp.com/blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/vs_tests.jpg?strip=info&#038;w=900&#038;ssl=1 900w,https://i2.wp.com/blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/vs_tests.jpg?strip=info&#038;w=1200&#038;ssl=1 1200w,https://i2.wp.com/blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/vs_tests.jpg?strip=info&#038;w=1338&#038;ssl=1 1338w" alt="" data-height="1338" data-id="384" data-link="https://blog.foodies.ginomessmer.me/?attachment_id=384" data-url="https://blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/vs_tests.jpg" data-width="2442" src="https://i2.wp.com/blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/vs_tests.jpg?ssl=1"/></figure></div></div></div></div>
+
+
+
+<p>xUnit allows us to test multiple implementations for interfaces. For example, when we implemented the database repository interface, we implemented the in-memory class first, tested it, and then implemented it as MongoDB implementation, and associated some integration tests to it. It works like a charm.</p>
+
+
+
+<h2>Frontend Story Time</h2>
+
+
+
+<p>Isabell and Imke have worked on the client app. Both of them looked further into Angular and Ionic, and successfully connected the canteen pages to the backend.</p>
+
+
+
+<p>In addition to that, they&#8217;ve tried out several layouts for the start and betting pages. Here&#8217;s a screenshot of the non-final static bets page on both Android and iOS:</p>
+
+
+
+<figure class="wp-block-image size-large"><img data-attachment-id="396" data-permalink="http://OFFLINEZIP.wpsho2019/12/01/foodys-architecture/localhost_8200_/" data-orig-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/12/localhost_8200_.png" data-orig-size="2280,2160" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="localhost_8200_" data-image-description="" data-medium-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/12/localhost_8200_-300x284.png" data-large-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/12/localhost_8200_-1024x970.png" src="https://blog.foodies.ginomessmer.me/wp-content/uploads/2019/12/localhost_8200_-1024x970.png" alt="" class="wp-image-396" srcset="http://OFFLINEZIP.wpshowp-content/uploads/2019/12/localhost_8200_-1024x970.png 1024w, http://OFFLINEZIP.wpshowp-content/uploads/2019/12/localhost_8200_-300x284.png 300w, http://OFFLINEZIP.wpshowp-content/uploads/2019/12/localhost_8200_-768x728.png 768w, http://OFFLINEZIP.wpshowp-content/uploads/2019/12/localhost_8200_-1536x1455.png 1536w, http://OFFLINEZIP.wpshowp-content/uploads/2019/12/localhost_8200_-2048x1940.png 2048w, http://OFFLINEZIP.wpshowp-content/uploads/2019/12/localhost_8200_-1200x1137.png 1200w, http://OFFLINEZIP.wpshowp-content/uploads/2019/12/localhost_8200_-1980x1876.png 1980w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>This should hopefully cover this week&#8217;s post. If you have further questions or comments, please let us know in the comments.</p>
+
+
+
+<p>Cheers,<br>Gino</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://OFFLINEZIP.wpsho2019/12/01/foodys-architecture/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">378</post-id>	</item>
+		<item>
+		<title>Class Diagrams</title>
+		<link>http://OFFLINEZIP.wpsho2019/11/24/class-diagrams/</link>
+					<comments>http://OFFLINEZIP.wpsho2019/11/24/class-diagrams/#comments</comments>
+		
+		<dc:creator><![CDATA[ginomessmer]]></dc:creator>
+		<pubDate>Sun, 24 Nov 2019 20:02:38 +0000</pubDate>
+				<category><![CDATA[Semester 3]]></category>
+		<category><![CDATA[Unidash]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[database]]></category>
+		<category><![CDATA[ddd]]></category>
+		<category><![CDATA[domain]]></category>
+		<category><![CDATA[planning]]></category>
+		<category><![CDATA[srs]]></category>
+		<category><![CDATA[uml]]></category>
+		<category><![CDATA[visual studio]]></category>
+		<guid isPermaLink="false">https://blog.foodies.ginomessmer.me/?p=347</guid>
+
+					<description><![CDATA[UML, Code Map &#38; Domain Models Creating class diagrams is especially fun when you work with many different domains and boundary contexts. Our challenge was to come up with loosely coupled data classes that don&#8217;t cross each others&#8217; boundary context. Bounded Context is a central pattern in Domain-Driven Design. It is the focus of DDD&#8217;s [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<h2>UML, Code Map &amp; Domain Models</h2>
+
+
+
+<p>Creating class diagrams is especially fun when you work with many different domains and boundary contexts. Our challenge was to come up with loosely coupled data classes that don&#8217;t cross each others&#8217; boundary context.</p>
+
+
+
+<blockquote class="wp-block-quote"><p>Bounded Context is a central pattern in Domain-Driven Design. It is the focus of DDD&#8217;s strategic design section which is all about dealing with large models and teams. DDD deals with large models by dividing them into different Bounded Contexts and being explicit about their interrelationships. </p><cite> <a href="https://martinfowler.com/bliki/BoundedContext.html">https://martinfowler.com/bliki/BoundedContext.html</a> <br></cite></blockquote>
+
+
+
+<p>In the end, we came up with something like this. This is a rough estimate of all of our <strong>domain data models </strong>and subject to change until we figure out which domains are going to make use of what kind of database framework (NoSQL or relational, that&#8217;s the question. Most likely NoSQL for most domains).</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img data-attachment-id="357" data-permalink="http://OFFLINEZIP.wpsho2019/11/24/class-diagrams/classdiagram-1/" data-orig-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1.png" data-orig-size="1367,759" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="ClassDiagram-1" data-image-description="" data-medium-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1-300x167.png" data-large-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1-1024x569.png" src="https://blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/ClassDiagram-1.png" alt="" class="wp-image-357" srcset="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1.png 1367w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1-300x167.png 300w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1-1024x569.png 1024w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1-768x426.png 768w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1-1200x666.png 1200w" sizes="(max-width: 1367px) 100vw, 1367px" /></figure>
+
+
+
+<p>You may notice that we don&#8217;t really reference other object types and kinda neglect the object-oriented paradigm. Unfortunately, as much as I love OOP, it&#8217;s simply not possible when you attempt to develop large-scale microservices with their own domain models. Domain Driven Development make sense in our case. So for instance, instead of referring Users by their object reference, we are required to store their IDs in the databases (that should be obvious enough though). Each boundary context <em>has its own database. </em></p>
+
+
+
+<p>In addition to the class diagram generated by Visual Studio, VS also has the capability to generate beautiful Code Maps. This helps to visualize the individual domains and boundary contexts. Have a look:</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img data-attachment-id="360" data-permalink="http://OFFLINEZIP.wpsho2019/11/24/class-diagrams/code-map-1/" data-orig-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/Code-Map-1.png" data-orig-size="1196,625" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Code-Map-1" data-image-description="" data-medium-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/Code-Map-1-300x157.png" data-large-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/Code-Map-1-1024x535.png" src="https://blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/Code-Map-1.png" alt="" class="wp-image-360" srcset="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/Code-Map-1.png 1196w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/Code-Map-1-300x157.png 300w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/Code-Map-1-1024x535.png 1024w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/Code-Map-1-768x401.png 768w" sizes="(max-width: 1196px) 100vw, 1196px" /></figure>
+
+
+
+<p>That should be all for this week. We also changed our SRS this week and sadly, the backend projects need some adjustments and part of it a small rewrite to cope with the new requirements. Scroll down to read more.</p>
+
+
+
+<p>Cheers, see you next week,<br>Gino</p>
+
+
+
+<h2>Application Roles</h2>
+
+
+
+<p class="has-background has-small-font-size has-accent-background-color">This section was written by team member Robin who is going to provide an update to available roles available for Foody.</p>
+
+
+
+<p>Last week we discussed where and how to deploy our Foody page in the future. We decided to concentrate on DHBW in the first place but we want to provide the service to other universities or schools in the (more less far) future.</p>
+
+
+
+<p>As we discussed, we talked about role systems that shall simplify the deployment and implementation for external use and had a small dispute about which roles shall be implemented and who shall be provided with them.</p>
+
+
+
+<p>To evaluate the problem we started from the beginning with writing down which permissions shall be provided at all. This is our result:</p>
+
+
+
+<ul><li><strong>User Management: </strong><br>create a course, invite users, manage the roles of users, delete users/courses.</li><li><strong>Course Time Table:</strong><br>create a local timeline from iCal by course, create local events, change/delete local events</li><li><strong>Bet Management:<br></strong>create a bet, create option, vote, set amount, delete bets</li></ul>
+
+
+
+<p>As you can see we&#8217;ve just focussed on tasks without any context so far. This will be evaluated when it comes to implementation soon. In the next step, we decided on which roles we want to implement those tasks (with some specifications). The result is as follows:</p>
+
+
+
+<ul><li><strong>Client/User:</strong><br>create a bet, create option, vote, set amount</li><li><strong>Local/Course Admin:</strong><br>invite users, manage roles of users, create a local timeline by iCal by course, create local events, change/delete local events, create iCal from local calendar, delete bets</li><li><strong>Global Admin:</strong><br>create course, delete users/courses </li></ul>
+
+
+
+<p class="has-small-font-size"><em>The power of admin-roles rises from top to bottom. All possibilities given to the former/lower-prioritized role are also given to the higher-rated ones.</em></p>
+
+
+
+<p>Now we have to evaluate how we want to implement this into our data structure. Be curious, this will be a blast.</p>
+
+
+
+<p>That&#8217;s it for now, have a good one.<br>Cheers. -RM- </p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://OFFLINEZIP.wpsho2019/11/24/class-diagrams/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">347</post-id>	</item>
+	</channel>
+</rss>

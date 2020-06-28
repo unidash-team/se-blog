@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>data &#8211; Unidash</title>
+	<atom:link href="http://OFFLINEZIP.wpshotag/data/feed/" rel="self" type="application/rss+xml" />
+	<link>https://OFFLINEZIP.wpsho</link>
+	<description>brought to you by Foodies Inc.</description>
+	<lastBuildDate>Sun, 28 Jun 2020 20:29:14 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.4.2</generator>
+
+<image>
+	<url>http://OFFLINEZIP.wpshowp-content/uploads/2020/06/cropped-logo_ud_glyph-1-32x32.png</url>
+	<title>data &#8211; Unidash</title>
+	<link>https://OFFLINEZIP.wpsho</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">167596888</site>	<item>
+		<title>Metrics</title>
+		<link>http://OFFLINEZIP.wpsho2020/06/06/metrics/</link>
+					<comments>http://OFFLINEZIP.wpsho2020/06/06/metrics/#comments</comments>
+		
+		<dc:creator><![CDATA[RawBean]]></dc:creator>
+		<pubDate>Sat, 06 Jun 2020 09:17:05 +0000</pubDate>
+				<category><![CDATA[Semester 4]]></category>
+		<category><![CDATA[Unidash]]></category>
+		<category><![CDATA[automation]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[tools]]></category>
+		<guid isPermaLink="false">http://OFFLINEZIP.wpsho?p=683</guid>
+
+					<description><![CDATA[Hello guys, Metrics can not only be found in software development but also in everyday situations like news or in your car. But as well as you should not just simply believe printed or shown details you should interpret them correctly. In your car for example the shown data when you hit 100 km/h is [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>Hello guys,</p>
+
+
+
+<p>Metrics can not only be found in software development but also in everyday situations like news or in your car. But as well as you should not just simply believe printed or shown details you should interpret them correctly. In your car for example the shown data when you hit 100 km/h is not very important until you find yourself in a speed limit of 30 km/h.&nbsp;</p>
+
+
+
+<p>And you should be sure that the given information is correct itself. So, it’s very hard to find a tool that brings you comfort in handling and setting up, provides you with all necessary information and creating the benefit you need for your software, maybe a warning when “you are too fast or too slow”.</p>
+
+
+
+<p>In this week’s blog post (to be fair, it’s a two-week-post) we talk about clean and safe code and how you can automatically check the quality of your code. We will speak about tools we already use, tools that we want to use and tools that do not meet our requirements. If you have any detailed questions about the software as outlined here, just let us know below.</p>
+
+
+
+<h2>Initial Situation</h2>
+
+
+
+<p>As we are using Azure DevOps for planning and managing our project, many metrics are already implemented and working before we already thought about using some additional software. But nevertheless, we wanted (at least) to check out some other metric tools to maybe improve our code much more.&nbsp;</p>
+
+
+
+<p>So, we checked the internet for some ideas and suggestions what kind of software there is and what we want for <em>Unidash</em>.&nbsp;</p>
+
+
+
+<h2>Additional Metrics</h2>
+
+
+
+<p>We found many different sites with lists of tools that may improve code or deployment and also monitor the system while running.&nbsp;</p>
+
+
+
+<p>We’ve seen that there are three categories (for us) that we could split up into different tools:</p>
+
+
+
+<ol><li>Team efficiency/Project planning</li><li>Business agility/Deployment</li><li>Security/Quality Assurance</li></ol>
+
+
+
+<p>As we use Azure DevOps, we already implemented nearly every tool that applies to ‘Project Planning’ and ‘Business Agility’. What makes life pretty easy when you choose a powerful tool to host your project (thanks Gino).</p>
+
+
+
+<p>So, we concentrated on Security and Quality Assurance. We found different tools for it, which we wanted to check out.</p>
+
+
+
+<h3>Candidate No. 1: SonarQube</h3>
+
+
+
+<p>SonarQube checks your code for weaknesses and smelly parts so you can easily find and fix them if you want to.&nbsp;</p>
+
+
+
+<p>SonarQube would be a perfect addition to what we already have. We are checking how and where we want to install it as our server and some of our work devices may not have enough power to keep everything smooth, but we are looking into it. We want to centralize it so everyone can use the benefits without having troubles while installing or monitoring it on their local devices.</p>
+
+
+
+<div class="wp-block-group has-subtle-background-background-color has-background"><div class="wp-block-group__inner-container">
+<h6>Addendum by gino</h6>
+
+
+
+<p>We integrated SonarCloud into our CI/CD pipeline. You can check out the SC project <a rel="noreferrer noopener" href="https://sonarcloud.io/dashboard?id=unidash-backend" target="_blank">over here</a>.</p>
+
+
+
+<p>In order to run this, all we needed to do is to integrate the tasks into our pipeline definition. Check the relevant <a rel="noreferrer noopener" href="https://dev.azure.com/foodies-inc/_git/Unidash?path=%2Fazure-pipelines.yml&amp;version=GBdev&amp;line=79&amp;lineEnd=80&amp;lineStartColumn=1&amp;lineEndColumn=1&amp;lineStyle=plain" target="_blank">code section here</a>.</p>
+</div></div>
+
+
+
+<hr class="wp-block-separator is-style-dots"/>
+
+
+
+<p>Another perfect supplement would be “Vault” which stores user secrets and app configurations in an encrypted environment. As we use many APIs for <em>Unidash </em>we may want to check this one out.</p>
+
+
+
+<div class="wp-block-group has-subtle-background-background-color has-background"><div class="wp-block-group__inner-container">
+<h6>Addendum by Gino</h6>
+
+
+
+<p>There is a variety of alternative tools when it comes to secret management. As for most stuff, some tools fit to a specific use-case, some not. Hashicorp&#8217;s Vault is a great versatile tool, however, we&#8217;ve opted into <a href="https://azure.microsoft.com/en-us/services/key-vault/" target="_blank" rel="noreferrer noopener">Azure Key Vault</a> for all microservices as an <em>optional </em>configuration layer. </p>
+
+
+
+<p>Azure Key Vault has first-party support for ASP.NET Core and is easy to configure.</p>
+</div></div>
+
+
+
+<hr class="wp-block-separator is-style-dots"/>
+
+
+
+<p>Last but not least, we are looking into “Clair” which analyzes Docker Containers for vulnerabilities. It’s another very handy tool if it is set up correctly.&nbsp;</p>
+
+
+
+<hr class="wp-block-separator is-style-dots"/>
+
+
+
+<div class="wp-block-group has-subtle-background-background-color has-background"><div class="wp-block-group__inner-container">
+<h6>Addendum by Gino</h6>
+
+
+
+<p>After we published this blog post, we&#8217;ve also integrated <a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview" target="_blank">Azure Application Insights</a> as an optional feature into the back-end projects. Application Insights delivers a handful of useful metrics, such as response times, error codes, external dependencies, etc.</p>
+
+
+
+<p>It&#8217;s a versatile tool and we are happy with it. Integrating it into our backend is easy as 123: <code>services.AddApplicationInsightsTelemetry(Configuration["APPINSIGHTS_INSTRUMENTATIONKEY"]);</code></p>
+</div></div>
+
+
+
+<p>We won’t use Jenkins, which was brought up by @profberk as we already have a perfectly working CI at Azure DevOps.</p>
+
+
+
+<p>So far, thanks for reading.</p>
+
+
+
+<p>If you have any questions or comments, just let us know below, every comment is highly appreciated.</p>
+
+
+
+<p>Cheers and stay healthy,<br>-RawBean-</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://OFFLINEZIP.wpsho2020/06/06/metrics/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">683</post-id>	</item>
+		<item>
+		<title>Class Diagrams</title>
+		<link>http://OFFLINEZIP.wpsho2019/11/24/class-diagrams/</link>
+					<comments>http://OFFLINEZIP.wpsho2019/11/24/class-diagrams/#comments</comments>
+		
+		<dc:creator><![CDATA[ginomessmer]]></dc:creator>
+		<pubDate>Sun, 24 Nov 2019 20:02:38 +0000</pubDate>
+				<category><![CDATA[Semester 3]]></category>
+		<category><![CDATA[Unidash]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[data]]></category>
+		<category><![CDATA[database]]></category>
+		<category><![CDATA[ddd]]></category>
+		<category><![CDATA[domain]]></category>
+		<category><![CDATA[planning]]></category>
+		<category><![CDATA[srs]]></category>
+		<category><![CDATA[uml]]></category>
+		<category><![CDATA[visual studio]]></category>
+		<guid isPermaLink="false">https://blog.foodies.ginomessmer.me/?p=347</guid>
+
+					<description><![CDATA[UML, Code Map &#38; Domain Models Creating class diagrams is especially fun when you work with many different domains and boundary contexts. Our challenge was to come up with loosely coupled data classes that don&#8217;t cross each others&#8217; boundary context. Bounded Context is a central pattern in Domain-Driven Design. It is the focus of DDD&#8217;s [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<h2>UML, Code Map &amp; Domain Models</h2>
+
+
+
+<p>Creating class diagrams is especially fun when you work with many different domains and boundary contexts. Our challenge was to come up with loosely coupled data classes that don&#8217;t cross each others&#8217; boundary context.</p>
+
+
+
+<blockquote class="wp-block-quote"><p>Bounded Context is a central pattern in Domain-Driven Design. It is the focus of DDD&#8217;s strategic design section which is all about dealing with large models and teams. DDD deals with large models by dividing them into different Bounded Contexts and being explicit about their interrelationships. </p><cite> <a href="https://martinfowler.com/bliki/BoundedContext.html">https://martinfowler.com/bliki/BoundedContext.html</a> <br></cite></blockquote>
+
+
+
+<p>In the end, we came up with something like this. This is a rough estimate of all of our <strong>domain data models </strong>and subject to change until we figure out which domains are going to make use of what kind of database framework (NoSQL or relational, that&#8217;s the question. Most likely NoSQL for most domains).</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img data-attachment-id="357" data-permalink="http://OFFLINEZIP.wpsho2019/11/24/class-diagrams/classdiagram-1/" data-orig-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1.png" data-orig-size="1367,759" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="ClassDiagram-1" data-image-description="" data-medium-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1-300x167.png" data-large-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1-1024x569.png" src="https://blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/ClassDiagram-1.png" alt="" class="wp-image-357" srcset="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1.png 1367w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1-300x167.png 300w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1-1024x569.png 1024w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1-768x426.png 768w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/ClassDiagram-1-1200x666.png 1200w" sizes="(max-width: 1367px) 100vw, 1367px" /></figure>
+
+
+
+<p>You may notice that we don&#8217;t really reference other object types and kinda neglect the object-oriented paradigm. Unfortunately, as much as I love OOP, it&#8217;s simply not possible when you attempt to develop large-scale microservices with their own domain models. Domain Driven Development make sense in our case. So for instance, instead of referring Users by their object reference, we are required to store their IDs in the databases (that should be obvious enough though). Each boundary context <em>has its own database. </em></p>
+
+
+
+<p>In addition to the class diagram generated by Visual Studio, VS also has the capability to generate beautiful Code Maps. This helps to visualize the individual domains and boundary contexts. Have a look:</p>
+
+
+
+<figure class="wp-block-image alignwide size-full"><img data-attachment-id="360" data-permalink="http://OFFLINEZIP.wpsho2019/11/24/class-diagrams/code-map-1/" data-orig-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/Code-Map-1.png" data-orig-size="1196,625" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Code-Map-1" data-image-description="" data-medium-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/Code-Map-1-300x157.png" data-large-file="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/Code-Map-1-1024x535.png" src="https://blog.foodies.ginomessmer.me/wp-content/uploads/2019/11/Code-Map-1.png" alt="" class="wp-image-360" srcset="http://OFFLINEZIP.wpshowp-content/uploads/2019/11/Code-Map-1.png 1196w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/Code-Map-1-300x157.png 300w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/Code-Map-1-1024x535.png 1024w, http://OFFLINEZIP.wpshowp-content/uploads/2019/11/Code-Map-1-768x401.png 768w" sizes="(max-width: 1196px) 100vw, 1196px" /></figure>
+
+
+
+<p>That should be all for this week. We also changed our SRS this week and sadly, the backend projects need some adjustments and part of it a small rewrite to cope with the new requirements. Scroll down to read more.</p>
+
+
+
+<p>Cheers, see you next week,<br>Gino</p>
+
+
+
+<h2>Application Roles</h2>
+
+
+
+<p class="has-background has-small-font-size has-accent-background-color">This section was written by team member Robin who is going to provide an update to available roles available for Foody.</p>
+
+
+
+<p>Last week we discussed where and how to deploy our Foody page in the future. We decided to concentrate on DHBW in the first place but we want to provide the service to other universities or schools in the (more less far) future.</p>
+
+
+
+<p>As we discussed, we talked about role systems that shall simplify the deployment and implementation for external use and had a small dispute about which roles shall be implemented and who shall be provided with them.</p>
+
+
+
+<p>To evaluate the problem we started from the beginning with writing down which permissions shall be provided at all. This is our result:</p>
+
+
+
+<ul><li><strong>User Management: </strong><br>create a course, invite users, manage the roles of users, delete users/courses.</li><li><strong>Course Time Table:</strong><br>create a local timeline from iCal by course, create local events, change/delete local events</li><li><strong>Bet Management:<br></strong>create a bet, create option, vote, set amount, delete bets</li></ul>
+
+
+
+<p>As you can see we&#8217;ve just focussed on tasks without any context so far. This will be evaluated when it comes to implementation soon. In the next step, we decided on which roles we want to implement those tasks (with some specifications). The result is as follows:</p>
+
+
+
+<ul><li><strong>Client/User:</strong><br>create a bet, create option, vote, set amount</li><li><strong>Local/Course Admin:</strong><br>invite users, manage roles of users, create a local timeline by iCal by course, create local events, change/delete local events, create iCal from local calendar, delete bets</li><li><strong>Global Admin:</strong><br>create course, delete users/courses </li></ul>
+
+
+
+<p class="has-small-font-size"><em>The power of admin-roles rises from top to bottom. All possibilities given to the former/lower-prioritized role are also given to the higher-rated ones.</em></p>
+
+
+
+<p>Now we have to evaluate how we want to implement this into our data structure. Be curious, this will be a blast.</p>
+
+
+
+<p>That&#8217;s it for now, have a good one.<br>Cheers. -RM- </p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://OFFLINEZIP.wpsho2019/11/24/class-diagrams/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">347</post-id>	</item>
+	</channel>
+</rss>

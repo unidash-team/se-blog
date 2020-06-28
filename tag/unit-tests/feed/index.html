@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>unit tests &#8211; Unidash</title>
+	<atom:link href="http://OFFLINEZIP.wpshotag/unit-tests/feed/" rel="self" type="application/rss+xml" />
+	<link>https://OFFLINEZIP.wpsho</link>
+	<description>brought to you by Foodies Inc.</description>
+	<lastBuildDate>Sun, 28 Jun 2020 20:25:35 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.4.2</generator>
+
+<image>
+	<url>http://OFFLINEZIP.wpshowp-content/uploads/2020/06/cropped-logo_ud_glyph-1-32x32.png</url>
+	<title>unit tests &#8211; Unidash</title>
+	<link>https://OFFLINEZIP.wpsho</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">167596888</site>	<item>
+		<title>Testing, Testing, Testing</title>
+		<link>http://OFFLINEZIP.wpsho2020/05/11/testing-testing-testing/</link>
+					<comments>http://OFFLINEZIP.wpsho2020/05/11/testing-testing-testing/#comments</comments>
+		
+		<dc:creator><![CDATA[Isabell Reitler]]></dc:creator>
+		<pubDate>Mon, 11 May 2020 17:34:53 +0000</pubDate>
+				<category><![CDATA[Backend]]></category>
+		<category><![CDATA[Frontend]]></category>
+		<category><![CDATA[Semester 4]]></category>
+		<category><![CDATA[Unidash]]></category>
+		<category><![CDATA[angular]]></category>
+		<category><![CDATA[cucumber]]></category>
+		<category><![CDATA[e2e]]></category>
+		<category><![CDATA[frontend]]></category>
+		<category><![CDATA[ionic]]></category>
+		<category><![CDATA[jasmine]]></category>
+		<category><![CDATA[tests]]></category>
+		<category><![CDATA[unit tests]]></category>
+		<guid isPermaLink="false">https://foodies.ginomessmer.me/?p=555</guid>
+
+					<description><![CDATA[This week, team frontend set up our new project and copied the canteen feature from our previous frontend project. After this, we had to start thinking about testing our frontend]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-4-3 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe class='youtube-player' width='580' height='327' src='https://www.youtube.com/embed/mqFJ_oaG4nw?version=3&#038;rel=1&#038;fs=1&#038;autohide=2&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' allowfullscreen='true' style='border:0;'></iframe>
+</div></figure>
+
+
+
+<p>We&nbsp;noticed, that we&nbsp;still need to implement the&nbsp;feature file&nbsp;tests.&nbsp;Besides&nbsp;that,&nbsp;we decided that we want to write some&nbsp;unit tests.&nbsp;&nbsp;</p>
+
+
+
+<p>To write&nbsp;feature&nbsp;file tests in Angular, we need the&nbsp;Protractor&nbsp;–Cucumber&nbsp;framework. This plugin makes it possible to run cucumber tests using&nbsp;Protractor. Protractor is an end-to-end test framework for Angular applications. It runs tests&nbsp;against the application running in a real&nbsp;web&nbsp;browser, interacting with it as a&nbsp;real&nbsp;user would&nbsp;do.&nbsp;</p>
+
+
+
+<p>The&nbsp;unit tests&nbsp;for&nbsp;Ionic/Angular are usually&nbsp;implemented&nbsp;with Jasmine&nbsp;and Karma.&nbsp;</p>
+
+
+
+<p>Jasmine is a modern Behavior Driven test framework&nbsp;for JavaScript projects.&nbsp;The pros of this framework are&nbsp;that it doesn’t need a web&nbsp;browser&nbsp;or any DOM and it has an “easy-to-read”-syntax.&nbsp;</p>
+
+
+
+<p>Karma, however, isn’t a testing framework, it’s a test runner.&nbsp;That means, it can run test&nbsp;code&nbsp;in&nbsp;multiple&nbsp;real web browsers.&nbsp;Which test framework you use doesn’t matter.&nbsp;There are&nbsp;already plugins for most of the common testing frameworks:&nbsp;<a rel="noreferrer noopener" href="https://github.com/karma-runner/karma-jasmine" target="_blank">Jasmine</a>,&nbsp;<a rel="noreferrer noopener" href="https://github.com/karma-runner/karma-mocha" target="_blank">Mocha</a>,&nbsp;<a rel="noreferrer noopener" href="https://github.com/karma-runner/karma-qunit" target="_blank">QUnit</a>,&nbsp;and <a rel="noreferrer noopener" href="https://www.npmjs.org/browse/keyword/karma-adapter" target="_blank">many others</a>.&nbsp;That is a big pro for Karma.&nbsp;</p>
+
+
+
+<p>So,&nbsp;we want to use Karma to run our&nbsp;jasmine test files.&nbsp;</p>
+
+
+
+<p>Because we set up our frontend-project with the Ionic/Angular&nbsp;CLI, all empty&nbsp;Jasmine&nbsp;test files&nbsp;have been&nbsp;generated automatically and the&nbsp;test&nbsp;frameworks&nbsp;were&nbsp;installed and configured correctly. So, it is possible to execute these&nbsp;tests directly after the project&nbsp;was&nbsp;set up. Our&nbsp;only&nbsp;job here is to write the tests and&nbsp;we&nbsp;think that is cool. That saves a lot of time.&nbsp;</p>
+
+
+
+<p>We have many things to do for this week. We don&#8217;t have anything to show just yet because we need additional time to implement these tests but make sure to check our next post where we will provide some working demos.</p>
+
+
+
+<div class="wp-block-group alignwide has-subtle-background-background-color has-background"><div class="wp-block-group__inner-container">
+<p>In the meantime, make sure to check out all the details about our <strong>backend testing</strong> that Gino has already written about:</p>
+
+
+
+<ul><li><a rel="noreferrer noopener" href="https://foodies.ginomessmer.me/2019/12/01/foodys-architecture#tdd" target="_blank"><strong>Test-Driven Development</strong> (TDD) in ASP.NET Core</a></li><li><a rel="noreferrer noopener" href="https://levelup.gitconnected.com/lets-have-some-fun-with-load-tests-c7b6b69e1cc6" target="_blank">Let’s Have Some Fun with <strong>Load Testing</strong></a></li><li><a rel="noreferrer noopener" href="https://medium.com/swlh/enhance-your-ci-cd-pipeline-with-automated-api-tests-2229425c2215" target="_blank">Enhance Your CI/CD Pipeline with <strong>Automated API Tests</strong></a></li></ul>
+
+
+
+<p>Also, check out the testing stage in our <a href="https://dev.azure.com/foodies-inc/Unidash/_build" target="_blank" rel="noreferrer noopener">CI/CD pipeline</a>.</p>
+</div></div>
+
+
+
+<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p>Cheers and stay safe,<br>Isi</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://OFFLINEZIP.wpsho2020/05/11/testing-testing-testing/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">555</post-id>	</item>
+	</channel>
+</rss>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Backend &#8211; Unidash</title>
+	<atom:link href="http://OFFLINEZIP.wpshocategory/unidash/foody-backend/feed/" rel="self" type="application/rss+xml" />
+	<link>https://OFFLINEZIP.wpsho</link>
+	<description>brought to you by Foodies Inc.</description>
+	<lastBuildDate>Sun, 28 Jun 2020 20:25:35 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.4.2</generator>
+
+<image>
+	<url>http://OFFLINEZIP.wpshowp-content/uploads/2020/06/cropped-logo_ud_glyph-1-32x32.png</url>
+	<title>Backend &#8211; Unidash</title>
+	<link>https://OFFLINEZIP.wpsho</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+<site xmlns="com-wordpress:feed-additions:1">167596888</site>	<item>
+		<title>The Mediator Pattern &#038; CQRS</title>
+		<link>http://OFFLINEZIP.wpsho2020/05/25/the-mediator-pattern-and-cqrs/</link>
+					<comments>http://OFFLINEZIP.wpsho2020/05/25/the-mediator-pattern-and-cqrs/#comments</comments>
+		
+		<dc:creator><![CDATA[ginomessmer]]></dc:creator>
+		<pubDate>Mon, 25 May 2020 09:47:14 +0000</pubDate>
+				<category><![CDATA[Backend]]></category>
+		<category><![CDATA[Semester 4]]></category>
+		<category><![CDATA[Unidash]]></category>
+		<category><![CDATA[best practice]]></category>
+		<category><![CDATA[c#]]></category>
+		<category><![CDATA[code pattern]]></category>
+		<category><![CDATA[dotnet]]></category>
+		<category><![CDATA[mediator]]></category>
+		<category><![CDATA[pattern]]></category>
+		<guid isPermaLink="false">http://OFFLINEZIP.wpsho?p=633</guid>
+
+					<description><![CDATA[Hey folks, Welcome to this week&#8217;s blog post. First of all, we are happy to announce that we came up with a new product name for project &#8220;Foody&#8221;. As you may have already noticed in the URL, we are now Unidash. 👋 This week, the queen shared some insights into coding patterns. I&#8217;d like to [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>Hey folks,</p>
+
+
+
+<p>Welcome to this week&#8217;s blog post. First of all, we are happy to announce that we came up with a new product name for project &#8220;Foody&#8221;. As you may have already noticed in the URL, we are now <strong>Unidash</strong>. <img src="https://s.w.org/images/core/emoji/12.0.0-1/72x72/1f44b.png" alt="👋" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+
+
+
+<hr class="wp-block-separator is-style-dots"/>
+
+
+
+<p>This week, the queen shared some insights into coding patterns. I&#8217;d like to take this opportunity and explain how we&#8217;ve incorporated some well-known patterns in the backend project.</p>
+
+
+
+<div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-cover alignfull has-background-dim" style="background-image:url(http://OFFLINEZIP.wpshowp-content/uploads/2020/05/franck-v-_E1PQXKUkMw-unsplash.jpg);min-height:160px"><div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-cover__inner-container">
+<h2>Mediator Pattern</h2>
+</div></div>
+
+
+
+<p>The Mediator Pattern is a <strong>behavioral design pattern</strong> that restricts calling dependencies to each other directly. Instead, it forces you to call methods through a mediator that coordinates and forwards your requests to the respective handlers that deal with the tasks.</p>
+
+
+
+<figure class="wp-block-image"><img src="https://refactoring.guru/images/patterns/content/mediator/mediator.png" alt="Mediator design pattern"/><figcaption>Source: <a href="https://refactoring.guru/design-patterns/mediator" target="_blank" rel="noreferrer noopener">refactoring.guru</a></figcaption></figure>
+
+
+
+<p>This pattern reduces the overall boilerplate and can help you to organize your code, especially if you are working with various product features.</p>
+
+
+
+<p>In the realms of .NET and C#, there&#8217;s the <a rel="noreferrer noopener" href="https://github.com/jbogard/MediatR" target="_blank">MediatR NuGet package</a> that allows you to implement this design pattern. The package provides the base classes, interfaces, and the mediator. All that&#8217;s left to do is to write the requests and request handlers.</p>
+
+
+
+<p>For Unidash, we&#8217;re using the mediator pattern for HTTP route actions and CQRS. Here&#8217;s a sample:</p>
+
+
+
+<div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-group alignfull has-background" style="background-color:#ffffff"><div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-group__inner-container">
+<style>.gist table { margin-bottom: 0; }</style><div class="gist-oembed" data-gist="568ce6b4c49b072f9322fe258fc7b035.json" data-ts="8"></div>
+</div></div>
+
+
+
+<div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p>As you can see, we are pulling the <code>IMediator</code> object instance from .NET Core&#8217;s built-in IoC Container in the <code>UsersController</code> class.</p>
+
+
+
+<p>In the actions methods, we are using this instance to fire a new request through the mediator object: <code>await _mediator.Send(new GetUserRequest(id));</code></p>
+
+
+
+<p>The Mediator will resolve the corresponding handler based on the same IoC container. The great part is that MediatR integrates well into the IoC container and enables us to use all instances that are part of the container. We&#8217;ll let the code speak for itself, it&#8217;s really straight forward.</p>
+
+
+
+<p>As I said in the beginning of the post: Using this pattern allows us to organize our code very well:</p>
+
+
+
+<div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-image"><figure class="aligncenter size-large"><img data-attachment-id="647" data-permalink="http://OFFLINEZIP.wpsho2020/05/25/the-mediator-pattern-and-cqrs/image-2-4/" data-orig-file="http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-2.png" data-orig-size="352,489" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image-2" data-image-description="" data-medium-file="http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-2-216x300.png" data-large-file="http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-2.png" src="http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-2.png" alt="" class="wp-image-647" srcset="http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-2.png 352w, http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-2-216x300.png 216w" sizes="(max-width: 352px) 100vw, 352px" /></figure></div>
+
+
+
+<div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-cover alignfull has-background-dim" style="background-image:url(http://OFFLINEZIP.wpshowp-content/uploads/2020/05/greg-jeanneau-0StwxZ4NigE-unsplash.jpg);min-height:160px"><div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-cover__inner-container">
+<h2>CQRS</h2>
+</div></div>
+
+
+
+<p>CQRS &#8211; short for <strong>C</strong>ommand <strong>Q</strong>uery <strong>R</strong>esponsibility <strong>S</strong>eperation &#8211; is a commonly used pattern for querying/reading data, but also performing write actions.</p>
+
+
+
+<blockquote class="wp-block-quote is-style-default"><p>The Command and Query Responsibility Segregation (CQRS) pattern separates read and update operations for a data store. Implementing CQRS in your application can maximize its performance, scalability, and security. The flexibility created by migrating to CQRS allows a system to better evolve over time and prevents update commands from causing merge conflicts at the domain level.</p><cite><a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs" target="_blank" rel="noreferrer noopener">Microsoft Docs</a></cite></blockquote>
+
+
+
+<p>To understand the problem, we let the experts at Microsoft speak again because they do a way better job at explaining it than us:</p>
+
+
+
+<blockquote class="wp-block-quote is-style-default"><p>In traditional architectures, the same data model is used to query and update a database. That&#8217;s simple and works well for basic CRUD operations. In more complex applications, however, this approach can become unwieldy. For example, on the read side, the application may perform many different queries, returning data transfer objects (DTOs) with different shapes. Object mapping can become complicated. On the write side, the model may implement complex validation and business logic. As a result, you can end up with an overly complex model that does too much.</p><cite><a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs" target="_blank" rel="noreferrer noopener">Microsoft Docs</a></cite></blockquote>
+
+
+
+<p>It builds on top of the Mediator Pattern and can be easily achieved with the same approach.</p>
+
+
+
+<p>Commands should be task based and always <strong>modify</strong> data. Queries however should only <strong>read</strong> data from the data source.</p>
+
+
+
+<p>Based on the same principle as above, we can introduce <em>Commands</em> and <em>Queries</em> as MediatR requests and request handlers. Here&#8217;s another sample:</p>
+
+
+
+<div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-group alignfull has-background" style="background-color:#ffffff"><div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-group__inner-container">
+<div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-columns alignwide">
+<div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-column">
+<h6 class="has-text-align-center">Command</h6>
+
+
+
+<style>.gist table { margin-bottom: 0; }</style><div class="gist-oembed" data-gist="bd534ae64e3e89f9aa876bd60fc7fedc.json" data-ts="8"></div>
+</div>
+
+
+
+<div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-column">
+<h6 class="has-text-align-center">Query</h6>
+
+
+
+<style>.gist table { margin-bottom: 0; }</style><div class="gist-oembed" data-gist="f143d649222f0f1f61d002e86c218746.json" data-ts="8"></div>
+</div>
+</div>
+</div></div>
+
+
+
+<div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' style="height:60px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p>The commands/queries are then being used by the request handlers as outlined in the Mediator section above.</p>
+
+
+
+<p><code>var user = await _mediator.Send(new FindUserQuery(request.Id), cancellationToken);</code></p>
+
+
+
+<p>As of now, we resemble CQS. For the &#8216;Responsibility&#8217; part, we need to introduce a separate read model (also called projection, view, DTO, whatever you prefer) for our queries because right now we are pulling the same domain object class from the database. This is on our to-do list. </p>
+
+
+
+<blockquote class="wp-block-quote has-text-align-left"><p>A query returns a DTO that does not encapsulate any domain knowledge.</p><cite><a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs" target="_blank" rel="noreferrer noopener">Microsoft Docs</a></cite></blockquote>
+
+
+
+<div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-group alignfull has-background" style="background-color:#ffffff"><div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-group__inner-container">
+<div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-image"><figure class="aligncenter"><img src="https://docs.microsoft.com/en-us/azure/architecture/patterns/_images/command-and-query-responsibility-segregation-cqrs-basic.png" alt="A basic CQRS architecture"/></figure></div>
+</div></div>
+
+
+
+<h2>Verdict</h2>
+
+
+
+<p>Using this pattern will allow us to be more adaptable to future changes and requirements. This is especially useful in our case since we intend to add or even change features as we go, while in SE class but also after our final presentation.</p>
+
+
+
+<p>Other than that, it can also help you to maximize performance, scalability, security, and flexibility while development, debugging and in production. </p>
+
+
+
+<p>As for flexibility, the MediatR package also allows you to modify the mediator pipeline. We intend to add a validation pipeline to it that validates all requests, commands, and queries <em>before </em>they are executed. Pretty dope.</p>
+
+
+
+<p>Here&#8217;s a class diagram demonstrating the request flow for the <code>GET /user/{id}</code> route for your viewing pleasure:</p>
+
+
+
+<div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-group alignfull has-text-color has-background" style="background-color:#1e1e1e;color:#ffffff"><div data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="wp-block-group__inner-container">
+<figure class="wp-block-gallery alignwide columns-1"><ul data-carousel-extra='{"blog_id":1,"permalink":"https:\/\/PLACEHOLDER.wpsho\/2020\/05\/25\/the-mediator-pattern-and-cqrs\/"}' class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img data-attachment-id="670" data-permalink="http://OFFLINEZIP.wpsho2020/05/25/the-mediator-pattern-and-cqrs/image-3-3/" data-orig-file="http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-3.png" data-orig-size="1893,556" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="image-3" data-image-description="" data-medium-file="http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-3-300x88.png" data-large-file="http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-3-1024x301.png" src="http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-3.png" alt="" data-id="670" class="wp-image-670" srcset="http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-3.png 1893w, http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-3-300x88.png 300w, http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-3-1024x301.png 1024w, http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-3-768x226.png 768w, http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-3-1536x451.png 1536w, http://OFFLINEZIP.wpshowp-content/uploads/2020/05/image-3-1200x352.png 1200w" sizes="(max-width: 1893px) 100vw, 1893px" /></figure></li></ul></figure>
+</div></div>
+
+
+
+<hr class="wp-block-separator is-style-dots"/>
+
+
+
+<p>In case you are curious for more, check out <a rel="noreferrer noopener" href="https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs" target="_blank">Microsoft&#8217;s </a>and <a rel="noreferrer noopener" href="https://martinfowler.com/bliki/CQRS.html" target="_blank">Martin Fowler&#8217;s</a> take on CQRS. Let us know what you think.</p>
+
+
+
+<p>Cheers, and stay safe,<br>Gino</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://OFFLINEZIP.wpsho2020/05/25/the-mediator-pattern-and-cqrs/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">633</post-id>	</item>
+		<item>
+		<title>Testing, Testing, Testing</title>
+		<link>http://OFFLINEZIP.wpsho2020/05/11/testing-testing-testing/</link>
+					<comments>http://OFFLINEZIP.wpsho2020/05/11/testing-testing-testing/#comments</comments>
+		
+		<dc:creator><![CDATA[Isabell Reitler]]></dc:creator>
+		<pubDate>Mon, 11 May 2020 17:34:53 +0000</pubDate>
+				<category><![CDATA[Backend]]></category>
+		<category><![CDATA[Frontend]]></category>
+		<category><![CDATA[Semester 4]]></category>
+		<category><![CDATA[Unidash]]></category>
+		<category><![CDATA[angular]]></category>
+		<category><![CDATA[cucumber]]></category>
+		<category><![CDATA[e2e]]></category>
+		<category><![CDATA[frontend]]></category>
+		<category><![CDATA[ionic]]></category>
+		<category><![CDATA[jasmine]]></category>
+		<category><![CDATA[tests]]></category>
+		<category><![CDATA[unit tests]]></category>
+		<guid isPermaLink="false">https://foodies.ginomessmer.me/?p=555</guid>
+
+					<description><![CDATA[This week, team frontend set up our new project and copied the canteen feature from our previous frontend project. After this, we had to start thinking about testing our frontend]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-embed-youtube wp-block-embed is-type-video is-provider-youtube wp-embed-aspect-4-3 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe class='youtube-player' width='580' height='327' src='https://www.youtube.com/embed/mqFJ_oaG4nw?version=3&#038;rel=1&#038;fs=1&#038;autohide=2&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;wmode=transparent' allowfullscreen='true' style='border:0;'></iframe>
+</div></figure>
+
+
+
+<p>We&nbsp;noticed, that we&nbsp;still need to implement the&nbsp;feature file&nbsp;tests.&nbsp;Besides&nbsp;that,&nbsp;we decided that we want to write some&nbsp;unit tests.&nbsp;&nbsp;</p>
+
+
+
+<p>To write&nbsp;feature&nbsp;file tests in Angular, we need the&nbsp;Protractor&nbsp;–Cucumber&nbsp;framework. This plugin makes it possible to run cucumber tests using&nbsp;Protractor. Protractor is an end-to-end test framework for Angular applications. It runs tests&nbsp;against the application running in a real&nbsp;web&nbsp;browser, interacting with it as a&nbsp;real&nbsp;user would&nbsp;do.&nbsp;</p>
+
+
+
+<p>The&nbsp;unit tests&nbsp;for&nbsp;Ionic/Angular are usually&nbsp;implemented&nbsp;with Jasmine&nbsp;and Karma.&nbsp;</p>
+
+
+
+<p>Jasmine is a modern Behavior Driven test framework&nbsp;for JavaScript projects.&nbsp;The pros of this framework are&nbsp;that it doesn’t need a web&nbsp;browser&nbsp;or any DOM and it has an “easy-to-read”-syntax.&nbsp;</p>
+
+
+
+<p>Karma, however, isn’t a testing framework, it’s a test runner.&nbsp;That means, it can run test&nbsp;code&nbsp;in&nbsp;multiple&nbsp;real web browsers.&nbsp;Which test framework you use doesn’t matter.&nbsp;There are&nbsp;already plugins for most of the common testing frameworks:&nbsp;<a rel="noreferrer noopener" href="https://github.com/karma-runner/karma-jasmine" target="_blank">Jasmine</a>,&nbsp;<a rel="noreferrer noopener" href="https://github.com/karma-runner/karma-mocha" target="_blank">Mocha</a>,&nbsp;<a rel="noreferrer noopener" href="https://github.com/karma-runner/karma-qunit" target="_blank">QUnit</a>,&nbsp;and <a rel="noreferrer noopener" href="https://www.npmjs.org/browse/keyword/karma-adapter" target="_blank">many others</a>.&nbsp;That is a big pro for Karma.&nbsp;</p>
+
+
+
+<p>So,&nbsp;we want to use Karma to run our&nbsp;jasmine test files.&nbsp;</p>
+
+
+
+<p>Because we set up our frontend-project with the Ionic/Angular&nbsp;CLI, all empty&nbsp;Jasmine&nbsp;test files&nbsp;have been&nbsp;generated automatically and the&nbsp;test&nbsp;frameworks&nbsp;were&nbsp;installed and configured correctly. So, it is possible to execute these&nbsp;tests directly after the project&nbsp;was&nbsp;set up. Our&nbsp;only&nbsp;job here is to write the tests and&nbsp;we&nbsp;think that is cool. That saves a lot of time.&nbsp;</p>
+
+
+
+<p>We have many things to do for this week. We don&#8217;t have anything to show just yet because we need additional time to implement these tests but make sure to check our next post where we will provide some working demos.</p>
+
+
+
+<div class="wp-block-group alignwide has-subtle-background-background-color has-background"><div class="wp-block-group__inner-container">
+<p>In the meantime, make sure to check out all the details about our <strong>backend testing</strong> that Gino has already written about:</p>
+
+
+
+<ul><li><a rel="noreferrer noopener" href="https://foodies.ginomessmer.me/2019/12/01/foodys-architecture#tdd" target="_blank"><strong>Test-Driven Development</strong> (TDD) in ASP.NET Core</a></li><li><a rel="noreferrer noopener" href="https://levelup.gitconnected.com/lets-have-some-fun-with-load-tests-c7b6b69e1cc6" target="_blank">Let’s Have Some Fun with <strong>Load Testing</strong></a></li><li><a rel="noreferrer noopener" href="https://medium.com/swlh/enhance-your-ci-cd-pipeline-with-automated-api-tests-2229425c2215" target="_blank">Enhance Your CI/CD Pipeline with <strong>Automated API Tests</strong></a></li></ul>
+
+
+
+<p>Also, check out the testing stage in our <a href="https://dev.azure.com/foodies-inc/Unidash/_build" target="_blank" rel="noreferrer noopener">CI/CD pipeline</a>.</p>
+</div></div>
+
+
+
+<div style="height:30px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p>Cheers and stay safe,<br>Isi</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>http://OFFLINEZIP.wpsho2020/05/11/testing-testing-testing/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+		<post-id xmlns="com-wordpress:feed-additions:1">555</post-id>	</item>
+	</channel>
+</rss>
